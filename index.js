@@ -4,9 +4,9 @@ import { logger, loggerError } from "./src/utils/logs.js";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const PORT = process.env.PORT || 8080;
+var port = process.env.PORT || 8080;
 
-const server = app.listen(PORT, async () => {
+const server = app.listen(port, async () => {
 	await mongoose
 		.connect(process.env.MONGO_CONNECT)
 		.then((db) => logger.info("Base de datos conectada"))
